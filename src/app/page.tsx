@@ -42,6 +42,7 @@ export default function Home() {
 
           <p className="text-gray-400 text-base sm:text-lg">
             Frontend Developer | React • Next.js • React Native • UI Engineering
+            • Freelancer
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
