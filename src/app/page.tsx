@@ -6,6 +6,9 @@ import Header from "@/components/Header";
 import adnanProfile from "../../public/profile.jpeg";
 import TechCarousel from "@/components/TechCarousel";
 import LiquidEther from "@/components/LiquidEther";
+import insta from "../../public/logos/instagram.svg";
+import linkedin from "../../public/logos/linkedin.svg";
+import gmail from "../../public/logos/gmail.svg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -336,30 +339,166 @@ export default function Home() {
       </section>
 
       {/* ================= PROJECTS ================= */}
-      <section id="projects" className="py-24 px-4 sm:px-6 lg:px-12 ">
+      <section id="projects" className="py-24 px-4 sm:px-6 lg:px-12">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-6xl mx-auto space-y-10 text-center"
+          className="max-w-6xl mx-auto space-y-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold">Projects</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center">
+            Projects
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-6 text-left">
-            {[
-              "Economic Times – Media Platform (Next.js)",
-              "TATA MAVIC – Mobile App (React Native)",
-              "NH Care Plus – Healthcare Platform",
-              "Contour Education – EdTech Platform",
-            ].map((project) => (
-              <div
-                key={project}
-                className="border border-white/10 rounded-lg p-6 text-gray-300"
-              >
-                {project}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Manjushree India */}
+            <div className="rounded-xl border border-white/15 p-6 space-y-4">
+              <h3 className="text-lg font-semibold">Manjushree India</h3>
+              <p className="text-gray-400 text-sm">
+                Developed a responsive corporate website with clean UI and
+                cross-browser compatibility.
+              </p>
+              <p className="text-gray-500 text-sm">
+                <span className="font-medium text-gray-300">Domain:</span>{" "}
+                Corporate Website
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"].map(
+                  (tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs px-3 py-1 rounded-full border border-white/20 text-gray-300"
+                    >
+                      {tech}
+                    </span>
+                  )
+                )}
               </div>
-            ))}
+            </div>
+
+            {/* Prescinto */}
+            <div className="rounded-xl border border-white/15 p-6 space-y-4">
+              <h3 className="text-lg font-semibold">Prescinto</h3>
+              <p className="text-gray-400 text-sm">
+                Built an interactive analytics dashboard focused on data
+                visualization and performance.
+              </p>
+              <p className="text-gray-500 text-sm">
+                <span className="font-medium text-gray-300">Domain:</span>{" "}
+                Energy Analytics Platform
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"].map(
+                  (tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs px-3 py-1 rounded-full border border-white/20 text-gray-300"
+                    >
+                      {tech}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* NH Care Plus */}
+            <div className="rounded-xl border border-white/15 p-6 space-y-4">
+              <h3 className="text-lg font-semibold">
+                NH Care Plus (OneHealth)
+              </h3>
+              <p className="text-gray-400 text-sm">
+                Developed a comprehensive healthcare web platform with
+                responsive design and modular UI.
+              </p>
+              <p className="text-gray-500 text-sm">
+                <span className="font-medium text-gray-300">Domain:</span>{" "}
+                Healthcare Platform
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"].map(
+                  (tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs px-3 py-1 rounded-full border border-white/20 text-gray-300"
+                    >
+                      {tech}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* TATA MAVIC */}
+            <div className="rounded-xl border border-white/15 p-6 space-y-4">
+              <h3 className="text-lg font-semibold">TCPL – TATA MAVIC</h3>
+              <p className="text-gray-400 text-sm">
+                Built an enterprise-grade mobile application with scalable
+                architecture and reusable components.
+              </p>
+              <p className="text-gray-500 text-sm">
+                <span className="font-medium text-gray-300">Domain:</span>{" "}
+                Enterprise Mobile Application
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["React Native", "TypeScript", "React Native Elements"].map(
+                  (tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs px-3 py-1 rounded-full border border-white/20 text-gray-300"
+                    >
+                      {tech}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Contour Education */}
+            <div className="rounded-xl border border-white/15 p-6 space-y-4">
+              <h3 className="text-lg font-semibold">Contour Education</h3>
+              <p className="text-gray-400 text-sm">
+                Created an EdTech web platform with reusable components and
+                modern UI patterns.
+              </p>
+              <p className="text-gray-500 text-sm">
+                <span className="font-medium text-gray-300">Domain:</span>{" "}
+                EdTech Platform – Web App
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["React", "TypeScript", "Material UI"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-3 py-1 rounded-full border border-white/20 text-gray-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Economic Times */}
+            <div className="rounded-xl border border-white/15 p-6 space-y-4">
+              <h3 className="text-lg font-semibold">Economic Times</h3>
+              <p className="text-gray-400 text-sm">
+                Developed a scalable, SEO-optimized media platform with
+                server-side rendering.
+              </p>
+              <p className="text-gray-500 text-sm">
+                <span className="font-medium text-gray-300">Domain:</span> Media
+                & Publishing Platform
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Next.js", "React", "SEO", "SSR"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-3 py-1 rounded-full border border-white/20 text-gray-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </section>
@@ -371,34 +510,112 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto space-y-6"
+          className="max-w-4xl mx-auto space-y-10"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-center">
             Education
           </h2>
 
-          <div className="border border-white/10 rounded-lg p-6">
-            <h3 className="font-semibold">B.E. Mechanical Engineering</h3>
-            <p className="text-gray-400">
-              RYMEC, Ballari · 2018 – 2022 · 82.04%
+          <div className="relative rounded-xl border border-white/10 p-8">
+            <h3 className="flex items-center gap-2 font-semibold text-lg">
+              🎓 Bachelor of Engineering – Mechanical Engineering
+            </h3>
+
+            <p className="text-gray-400 mt-1">RYMEC, Ballari · 2018 – 2022</p>
+
+            <p className="text-gray-300 mt-2">
+              Percentage: <span className="text-white font-medium">82.04%</span>
+            </p>
+
+            {/* Optional highlight */}
+            <p className="mt-2 text-sm text-gray-400">
+              Awarded 2nd Rank in Mechanical Engineering Department
             </p>
           </div>
         </motion.div>
       </section>
 
-      {/* ================= CONTACT ================= */}
-      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-12 text-center">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold">Let’s Connect</h2>
-          <p className="text-gray-400">adnan.mech.rymec@gmail.com</p>
-        </motion.div>
-      </section>
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="max-w-xl mx-auto text-center space-y-10"
+      >
+        <h2 className="text-3xl sm:text-4xl font-bold">Let’s Connect</h2>
+
+        <p className="text-gray-400 max-w-md mx-auto">
+          Feel free to reach out for opportunities, collaborations, or just a
+          friendly hello.
+        </p>
+
+        {/* Contact Cards */}
+        <div className="flex justify-center gap-6 flex-wrap">
+          {/* Email */}
+          <a
+            href="mailto:adnan.mech.rymec@gmail.com"
+            className="group w-28 h-28 rounded-xl border border-white/15 
+                 flex flex-col items-center justify-center gap-3
+                 hover:border-white/40 hover:bg-white/5 transition"
+          >
+            <Image
+              src={gmail}
+              alt="Email"
+              width={32}
+              height={32}
+              className="opacity-80 group-hover:opacity-100 transition"
+            />
+            <span className="text-sm text-gray-300 group-hover:text-white">
+              Email
+            </span>
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/md-adnan-pasha217"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group w-28 h-28 rounded-xl border border-white/15 
+                 flex flex-col items-center justify-center gap-3
+                 hover:border-white/40 hover:bg-white/5 transition"
+          >
+            <Image
+              src={linkedin}
+              alt="LinkedIn"
+              width={32}
+              height={32}
+              className="opacity-80 group-hover:opacity-100 transition"
+            />
+            <span className="text-sm text-gray-300 group-hover:text-white">
+              LinkedIn
+            </span>
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/journeywithpasha.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group w-28 h-28 rounded-xl border border-white/15 
+                 flex flex-col items-center justify-center gap-3
+                 hover:border-white/40 hover:bg-white/5 transition"
+          >
+            <Image
+              src={insta}
+              alt="Instagram"
+              width={32}
+              height={32}
+              className="opacity-80 group-hover:opacity-100 transition"
+            />
+            <span className="text-sm text-gray-300 group-hover:text-white">
+              Instagram
+            </span>
+          </a>
+        </div>
+
+        {/* Email text */}
+        <p className="text-gray-500 text-sm">adnan.mech.rymec@gmail.com</p>
+      </motion.div>
     </main>
   );
 }
