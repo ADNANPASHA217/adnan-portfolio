@@ -9,6 +9,9 @@ import LiquidEther from "@/components/LiquidEther";
 import insta from "../../public/logos/instagram.svg";
 import linkedin from "../../public/logos/linkedin.svg";
 import gmail from "../../public/logos/gmail.svg";
+import udemyCert from "../../public/certificates/udemy-react.jpeg";
+import kodnestCert from "../../public/certificates/kodenest-certifiacate.jpeg";
+import { useState } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,6 +19,8 @@ const fadeUp = {
 };
 
 export default function Home() {
+  const [preview, setPreview] = useState<string | null>(null);
+
   return (
     <main className="relative min-h-screen text-white overflow-x-hidden">
       <Header />
@@ -233,25 +238,57 @@ export default function Home() {
           </h2>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            {/* Kodnest */}
-            <div className="rounded-xl border border-white/15 p-6 space-y-2">
-              <h3 className="font-semibold">Full Stack Web Technologies</h3>
-              <p className="text-gray-400 text-sm">Kodnest · Java & Python</p>
-              <p className="text-gray-500 text-sm">
-                Credential ID: <span className="text-gray-300">KODCF564</span>
-              </p>
+            {/* ================= KODNEST ================= */}
+            <div className="rounded-xl border border-white/15 p-6 flex gap-4 items-center">
+              <button onClick={() => setPreview(kodnestCert.src)}>
+                <Image
+                  src={kodnestCert}
+                  alt="Kodnest Certificate"
+                  width={180}
+                  height={90}
+                  className="
+              w-[140px] sm:w-[180px] h-auto
+              rounded-md border border-white/20
+              hover:scale-105 transition-transform
+            "
+                />
+              </button>
+
+              <div className="space-y-1">
+                <h3 className="font-semibold">Full Stack Web Technologies</h3>
+                <p className="text-gray-400 text-sm">Kodnest · Java & Python</p>
+                <p className="text-gray-500 text-xs">
+                  Credential ID: <span className="text-gray-300">KODCF564</span>
+                </p>
+              </div>
             </div>
 
-            {/* Udemy */}
-            <div className="rounded-xl border border-white/15 p-6 space-y-2">
-              <h3 className="font-semibold">React – The Complete Guide</h3>
-              <p className="text-gray-400 text-sm">Udemy · Next.js & Redux</p>
-              <p className="text-gray-500 text-sm">
-                Certificate No:{" "}
-                <span className="text-gray-300">
-                  UC-1089e6e9-5849-4573-85e5- 7ad58c96aa99
-                </span>
-              </p>
+            {/* ================= UDEMY ================= */}
+            <div className="rounded-xl border border-white/15 p-6 flex gap-4 items-center">
+              <button onClick={() => setPreview(udemyCert.src)}>
+                <Image
+                  src={udemyCert}
+                  alt="Udemy Certificate"
+                  width={180}
+                  height={90}
+                  className="
+              w-[140px] sm:w-[180px] h-auto
+              rounded-md border border-white/20
+              hover:scale-105 transition-transform
+            "
+                />
+              </button>
+
+              <div className="space-y-1">
+                <h3 className="font-semibold">React – The Complete Guide</h3>
+                <p className="text-gray-400 text-sm">Udemy · Next.js & Redux</p>
+                <p className="text-gray-500 text-xs break-all">
+                  Certificate No:{" "}
+                  <span className="text-gray-300">
+                    UC-1089e6e9-5849-4573-85e5-7ad58c96aa99
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -611,7 +648,7 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-      <section id="contact" className="px-4 sm:px-6 lg:px-12">
+      <section id="contact" className="pb-24 ">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -694,6 +731,47 @@ export default function Home() {
           <p className="text-gray-500 text-sm">adnan.mech.rymec@gmail.com</p>
         </motion.div>
       </section>
+
+      {preview && (
+        <div
+          className="
+      fixed inset-0 z-[999]
+      bg-black/80 backdrop-blur-sm
+      flex items-center justify-center px-4
+    "
+          onClick={() => setPreview(null)}
+        >
+          <div className="relative " onClick={(e) => e.stopPropagation()}>
+            <div
+              style={{ display: "flex", width: "100%", marginBottom: "12px" }}
+            >
+              <button
+                onClick={() => setPreview(null)}
+                style={{
+                  marginLeft: "auto",
+                  background: "#FFF",
+                  fontSize: "16px",
+                  color: "#000",
+                  borderRadius: "50%",
+                  width: "25px",
+                  height: "25px",
+                  cursor: "pointer",
+                }}
+              >
+                ✕
+              </button>
+            </div>
+
+            <Image
+              src={preview}
+              alt="Certificate Preview"
+              width={700}
+              height={400}
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }
