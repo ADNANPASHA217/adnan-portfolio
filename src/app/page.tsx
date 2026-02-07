@@ -94,13 +94,19 @@ export default function Home() {
           className="max-w-3xl mx-auto text-center space-y-6"
         >
           <h2 className="text-3xl sm:text-4xl font-bold">About Me</h2>
-          <p className="text-gray-400">
-            Frontend Developer with 3+ years of hands-on experience in React,
-            Next.js, and React Native, building scalable, maintainable, and
-            performance-driven applications.
+
+          <p className="relative text-gray-400 text-lg leading-relaxed">
+            <span className="absolute -left-6 -top-4 text-6xl text-white/20 font-serif">
+              “
+            </span>
+            <span className="relative">
+              Frontend Developer with 3+ years of hands-on experience in React,
+              Next.js, and React Native, building scalable, maintainable, and
+              performance-driven applications.
+            </span>
           </p>
 
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-base leading-relaxed">
             I specialize in creating clean UI, reusable component systems, and
             SEO-optimized interfaces. I focus on delivering fast, accessible,
             and user-centric digital experiences.
@@ -218,31 +224,112 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto space-y-10"
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">
             Experience
           </h2>
 
-          <div className="space-y-6">
-            <div className="border border-white/10 rounded-lg p-6">
-              <h3 className="font-semibold">Software Engineer – Zyptr</h3>
-              <p className="text-gray-400">Apr 2025 – Present</p>
-              <ul className="list-disc list-inside mt-3 text-gray-300">
-                <li>Built UI using React, TypeScript, Tailwind & MUI</li>
-                <li>Integrated APIs and optimized performance</li>
-                <li>Collaborated with cross-functional teams</li>
-              </ul>
+          {/* Wrapper WITHOUT space-y */}
+          <div className="relative">
+            {/* ================= ZYPTR ================= */}
+            <div className="relative rounded-xl border border-white/15 p-8 ">
+              <h3 className="font-semibold text-xl mb-6">Zyptr · Full-time</h3>
+
+              {/* Inner timeline */}
+              <div className="relative pl-12">
+                {/* Vertical line */}
+                <div className="absolute left-3 top-0 bottom-0 w-px bg-white/20" />
+
+                <div className="relative">
+                  {/* Dot aligned with line */}
+                  <span
+                    style={{ left: "-41.5px" }}
+                    className="absolute  top-2 w-3 h-3 bg-white rounded-full"
+                  />
+
+                  <h4 className="font-semibold">Software Engineer – 2</h4>
+                  <p className="text-gray-400 text-sm">
+                    Apr 2025 – Present · Bellary, India · On-site
+                  </p>
+                  <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
+                    <li>Built modern UI using React, TypeScript & Next.js</li>
+                    <li>Optimized performance and reusable components</li>
+                    <li>Collaborated with cross-functional teams</li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            <div className="border border-white/10 rounded-lg p-6">
-              <h3 className="font-semibold">Software Engineer – Terralogic</h3>
-              <p className="text-gray-400">Dec 2022 – Apr 2025</p>
-              <ul className="list-disc list-inside mt-3 text-gray-300">
-                <li>Developed reusable component architecture</li>
-                <li>Worked on enterprise & healthcare platforms</li>
-                <li>Improved UX and code quality</li>
-              </ul>
+            {/* ===== CONNECTING FLOW LINE (OVERLAPPED) ===== */}
+            <div className="relative h-10">
+              <div
+                className="absolute left-[27px] top-0 bottom-0 w-px"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent, rgba(255,255,255,0.6), transparent)",
+                  backgroundSize: "100% 200%",
+                  animation: "flowDown 3s linear infinite",
+                }}
+              />
+            </div>
+
+            {/* ================= TERRALOGIC ================= */}
+            <div className="relative rounded-xl border border-white/15 p-8 ">
+              <h3 className="font-semibold text-xl mb-6">
+                Terralogic · Full-time
+              </h3>
+
+              {/* Inner timeline */}
+              <div className="relative pl-12">
+                {/* Vertical line */}
+                <div className="absolute left-3 top-0 bottom-0 w-px bg-white/20" />
+
+                {/* SE-2 */}
+                <div className="relative mb-8">
+                  <span
+                    style={{ left: "-41.5px" }}
+                    className="absolute left-[11px] top-2 w-3 h-3 bg-white rounded-full"
+                  />
+                  <h4 className="font-semibold">Software Engineer – 2</h4>
+                  <p className="text-gray-400 text-sm">
+                    Jul 2024 – Apr 2025 · Bellary, India
+                  </p>
+                  <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
+                    <li>Led feature development for web applications</li>
+                    <li>Worked on enterprise & healthcare platforms</li>
+                    <li>Improved UX and code quality</li>
+                  </ul>
+                </div>
+
+                {/* SE-1 */}
+                <div className="relative mb-8">
+                  <span
+                    style={{ left: "-41.5px" }}
+                    className="absolute left-[11px] top-2 w-3 h-3 bg-white/70 rounded-full"
+                  />
+                  <h4 className="font-semibold">Software Engineer – 1</h4>
+                  <p className="text-gray-400 text-sm">Dec 2023 – Jul 2024</p>
+                  <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
+                    <li>Developed reusable component architecture</li>
+                    <li>Integrated APIs and async flows</li>
+                  </ul>
+                </div>
+
+                {/* Trainee */}
+                <div className="relative">
+                  <span
+                    style={{ left: "-41.5px" }}
+                    className="absolute left-[11px] top-2 w-3 h-3 bg-white/50 rounded-full"
+                  />
+                  <h4 className="font-semibold">Trainee Software Engineer</h4>
+                  <p className="text-gray-400 text-sm">Dec 2022 – Dec 2023</p>
+                  <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
+                    <li>Built foundational UI using React & JavaScript</li>
+                    <li>Learned Git workflows and agile practices</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
