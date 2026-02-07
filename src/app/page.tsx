@@ -2,171 +2,218 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Header from "@/components/Header";
 import adnanProfile from "../../public/profile.jpeg";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* ================= HERO SECTION ================= */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12">
+      <Header />
+
+      {/* ================= HERO ================= */}
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 pt-16"
+      >
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center w-full max-w-4xl space-y-6 sm:space-y-8"
+          className="text-center w-full max-w-4xl space-y-8"
         >
-          {/* Profile Image */}
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="
-              mx-auto 
-              w-28 h-28 
-              sm:w-36 sm:h-36 
-              md:w-40 md:h-40 
-              rounded-full 
-              overflow-hidden 
-              ring-2 ring-white/20
-            "
+            transition={{ delay: 0.2 }}
+            className="mx-auto w-32 h-32 rounded-full overflow-hidden ring-2 ring-white/20"
           >
-            <Image
-              src={adnanProfile}
-              alt="Mohammed Adnan Pasha"
-              className="object-cover"
-              priority
-            />
+            <Image src={adnanProfile} alt="Adnan" className="object-cover" />
           </motion.div>
 
-          {/* Name */}
-          <motion.h1
-            initial={{ scale: 0.95 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3 }}
-            className="
-              font-bold tracking-tight
-              text-3xl 
-              sm:text-4xl 
-              md:text-5xl 
-              lg:text-6xl
-            "
-          >
+          <h1 className="font-bold text-4xl sm:text-5xl lg:text-6xl">
             Mohammed Adnan Pasha 🚀
-          </motion.h1>
+          </h1>
 
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="
-              text-sm 
-              sm:text-base 
-              md:text-lg 
-              lg:text-xl
-              text-gray-400 
-              max-w-2xl 
-              mx-auto
-            "
-          >
+          <p className="text-gray-400 text-base sm:text-lg">
             Frontend Developer | React • Next.js • React Native • UI Engineering
-          </motion.p>
+          </p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="
-              flex 
-              flex-col 
-              sm:flex-row 
-              gap-3 
-              sm:gap-4 
-              justify-center 
-              pt-4
-            "
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://www.linkedin.com/in/md-adnan-pasha217"
               target="_blank"
-              rel="noopener noreferrer"
-              className="
-                px-6 py-3 
-                border border-white 
-                rounded-lg 
-                text-sm sm:text-base
-                hover:bg-white hover:text-black 
-                transition-all duration-300
-              "
+              className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
             >
               LinkedIn
             </a>
-
             <a
               href="mailto:adnan.mech.rymec@gmail.com"
-              className="
-                px-6 py-3 
-                bg-white text-black 
-                rounded-lg 
-                text-sm sm:text-base
-                hover:opacity-80 
-                transition-all duration-300
-              "
+              className="px-6 py-3 bg-white text-black rounded-lg hover:opacity-80 transition"
             >
               Contact
             </a>
-          </motion.div>
+          </div>
         </motion.div>
       </section>
 
-      {/* ================= ABOUT SECTION ================= */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12">
+      {/* ================= ABOUT ================= */}
+      <section id="about" className="py-24 px-4 sm:px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          className="w-full max-w-3xl text-center space-y-5 sm:space-y-6"
+          className="max-w-3xl mx-auto text-center space-y-6"
         >
-          <h2
-            className="
-              font-bold 
-              text-2xl 
-              sm:text-3xl 
-              md:text-4xl
-            "
-          >
-            About Me
+          <h2 className="text-3xl sm:text-4xl font-bold">About Me</h2>
+          <p className="text-gray-400">
+            Frontend developer with 3+ years of experience building scalable,
+            high-performance web applications using React, Next.js, and modern
+            UI frameworks.
+          </p>
+          <p className="text-gray-400">
+            Passionate about clean code, smooth animations, and intuitive user
+            experiences.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* ================= SKILLS ================= */}
+      <section id="skills" className="py-24 px-4 sm:px-6 lg:px-12 bg-black">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto space-y-10 text-center"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold">Skills</h2>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            {[
+              "React.js / Next.js / React Native",
+              "TypeScript / JavaScript",
+              "Material UI / Tailwind CSS / Bootstrap",
+              "Redux / Context API",
+              "REST APIs / Axios / Fetch",
+              "Git / GitHub / GitLab",
+            ].map((skill) => (
+              <div
+                key={skill}
+                className="border border-white/10 rounded-lg p-5 text-gray-300"
+              >
+                {skill}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ================= EXPERIENCE ================= */}
+      <section id="experience" className="py-24 px-4 sm:px-6 lg:px-12">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto space-y-10"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-center">
+            Experience
           </h2>
 
-          <p
-            className="
-              text-gray-400 
-              text-sm 
-              sm:text-base 
-              md:text-lg 
-              leading-relaxed
-            "
-          >
-            I’m a frontend developer focused on building clean, scalable, and
-            high-performance web applications. I enjoy turning complex problems
-            into intuitive user experiences using React, Next.js, and modern UI
-            patterns.
-          </p>
+          <div className="space-y-6">
+            <div className="border border-white/10 rounded-lg p-6">
+              <h3 className="font-semibold">Software Engineer – Zyptr</h3>
+              <p className="text-gray-400">Apr 2025 – Present</p>
+              <ul className="list-disc list-inside mt-3 text-gray-300">
+                <li>Built UI using React, TypeScript, Tailwind & MUI</li>
+                <li>Integrated APIs and optimized performance</li>
+                <li>Collaborated with cross-functional teams</li>
+              </ul>
+            </div>
 
-          <p
-            className="
-              text-gray-400 
-              text-sm 
-              sm:text-base 
-              md:text-lg 
-              leading-relaxed
-            "
-          >
-            I care deeply about code quality, animations that feel natural, and
-            interfaces that users actually enjoy using.
-          </p>
+            <div className="border border-white/10 rounded-lg p-6">
+              <h3 className="font-semibold">Software Engineer – Terralogic</h3>
+              <p className="text-gray-400">Dec 2022 – Apr 2025</p>
+              <ul className="list-disc list-inside mt-3 text-gray-300">
+                <li>Developed reusable component architecture</li>
+                <li>Worked on enterprise & healthcare platforms</li>
+                <li>Improved UX and code quality</li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ================= PROJECTS ================= */}
+      <section id="projects" className="py-24 px-4 sm:px-6 lg:px-12 bg-black">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto space-y-10 text-center"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold">Projects</h2>
+
+          <div className="grid md:grid-cols-2 gap-6 text-left">
+            {[
+              "Economic Times – Media Platform (Next.js)",
+              "TATA MAVIC – Mobile App (React Native)",
+              "NH Care Plus – Healthcare Platform",
+              "Contour Education – EdTech Platform",
+            ].map((project) => (
+              <div
+                key={project}
+                className="border border-white/10 rounded-lg p-6 text-gray-300"
+              >
+                {project}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ================= EDUCATION ================= */}
+      <section id="education" className="py-24 px-4 sm:px-6 lg:px-12">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto space-y-6"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-center">
+            Education
+          </h2>
+
+          <div className="border border-white/10 rounded-lg p-6">
+            <h3 className="font-semibold">B.E. Mechanical Engineering</h3>
+            <p className="text-gray-400">
+              RYMEC, Ballari · 2018 – 2022 · 82.04%
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ================= CONTACT ================= */}
+      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-12 text-center">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold">Let’s Connect</h2>
+          <p className="text-gray-400">adnan.mech.rymec@gmail.com</p>
         </motion.div>
       </section>
     </main>
