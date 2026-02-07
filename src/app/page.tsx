@@ -16,6 +16,13 @@ import rising1 from "../../public/certificates/terralogic2023.jpeg";
 import rising2 from "../../public/certificates/terralogic2023award.jpeg";
 import aboveBeyond from "../../public/certificates/terralogic2024.jpeg";
 import mechRank from "../../public/certificates/rymec-acadamic-ext.jpeg";
+import meIcon from "../../public/icons/personal.svg";
+import SkillIcon from "../../public/icons/creativity-expertise-idea-svgrepo-com.svg";
+import CertificationsIcon from "../../public/icons/certificate-svgrepo-com.svg";
+import ExperienceIcon from "../../public/icons/experience-svgrepo-com.svg";
+import AwardsIcon from "../../public/icons/trophy-svgrepo-com.svg";
+import ProjectsIcon from "../../public/icons/projects-svgrepo-com.svg";
+import EducationIcon from "../../public/icons/education-svgrepo-com.svg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -107,7 +114,18 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center space-y-6"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold">About Me</h2>
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold flex items-center justify-center gap-3">
+              <Image
+                src={meIcon}
+                alt="About Me"
+                width={28}
+                height={28}
+                className="opacity-80"
+              />
+              <span>About Me</span>
+            </h2>
+          </div>
 
           <p className="relative text-gray-400 text-lg leading-relaxed">
             <span className="absolute -left-6 -top-4 text-6xl text-white/20 font-serif">
@@ -137,7 +155,16 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto space-y-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">Skills</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold flex items-center justify-center gap-3">
+            <Image
+              src={SkillIcon}
+              alt="About Me"
+              width={32}
+              height={32}
+              className="opacity-80"
+            />
+            <span>Skills</span>
+          </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left auto-rows-fr">
             {[
@@ -239,8 +266,15 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">
-            Certifications
+          <h2 className="text-3xl sm:text-4xl font-bold flex items-center justify-center gap-3">
+            <Image
+              src={CertificationsIcon}
+              alt="About Me"
+              width={32}
+              height={32}
+              className="opacity-80"
+            />
+            <span>Certifications</span>
           </h2>
 
           <div className="grid sm:grid-cols-2 gap-6">
@@ -312,8 +346,15 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">
-            Experience
+          <h2 className="text-3xl sm:text-4xl font-bold flex items-center justify-center gap-3 mb-16">
+            <Image
+              src={ExperienceIcon}
+              alt="About Me"
+              width={32}
+              height={32}
+              className="opacity-80"
+            />
+            <span>Experience</span>
           </h2>
 
           {/* Wrapper WITHOUT space-y */}
@@ -429,8 +470,15 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-10"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">
-            Awards & Recognition
+          <h2 className="text-3xl sm:text-4xl font-bold flex items-center justify-center gap-3">
+            <Image
+              src={AwardsIcon}
+              alt="About Me"
+              width={32}
+              height={32}
+              className="opacity-80"
+            />
+            <span> Awards & Recognition</span>
           </h2>
 
           <div className="space-y-8">
@@ -576,8 +624,15 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto space-y-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">
-            Projects
+          <h2 className="text-3xl sm:text-4xl font-bold flex items-center justify-center gap-3">
+            <Image
+              src={ProjectsIcon}
+              alt="About Me"
+              width={32}
+              height={32}
+              className="opacity-80"
+            />
+            <span>Projects</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -741,8 +796,15 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-10"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">
-            Education
+          <h2 className="text-3xl sm:text-4xl font-bold flex items-center justify-center gap-3">
+            <Image
+              src={EducationIcon}
+              alt="About Me"
+              width={32}
+              height={32}
+              className="opacity-80"
+            />
+            <span>Education</span>
           </h2>
 
           <div className="relative rounded-xl border border-white/10 p-8">
