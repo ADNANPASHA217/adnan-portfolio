@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Header from "@/components/Header";
 import adnanProfile from "../../public/profile.jpeg";
+import TechCarousel from "@/components/TechCarousel";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -59,6 +60,10 @@ export default function Home() {
             >
               Contact
             </a>
+          </div>
+          {/* Tech Stack Carousel */}
+          <div>
+            <TechCarousel />
           </div>
         </motion.div>
       </section>
