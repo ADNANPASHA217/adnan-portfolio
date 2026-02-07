@@ -31,14 +31,8 @@ export default function Header() {
           <a href="#skills" className="hover:text-white transition">
             Skills
           </a>
-          <a href="#certifications" className="hover:text-white transition">
-            Certifications
-          </a>
           <a href="#experience" className="hover:text-white transition">
             Experience
-          </a>
-          <a href="#awards" className="hover:text-white transition">
-            Awards & Recognition
           </a>
           <a href="#projects" className="hover:text-white transition">
             Projects

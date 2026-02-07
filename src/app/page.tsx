@@ -219,43 +219,6 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-      {/* ================= CERTIFICATIONS ================= */}
-      <section id="certifications" className="py-24 px-4 sm:px-6 lg:px-12">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto space-y-12"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">
-            Certifications
-          </h2>
-
-          <div className="grid sm:grid-cols-2 gap-6">
-            {/* Kodnest */}
-            <div className="rounded-xl border border-white/15 p-6 space-y-2">
-              <h3 className="font-semibold">Full Stack Web Technologies</h3>
-              <p className="text-gray-400 text-sm">Kodnest · Java & Python</p>
-              <p className="text-gray-500 text-sm">
-                Credential ID: <span className="text-gray-300">KODCF564</span>
-              </p>
-            </div>
-
-            {/* Udemy */}
-            <div className="rounded-xl border border-white/15 p-6 space-y-2">
-              <h3 className="font-semibold">React – The Complete Guide</h3>
-              <p className="text-gray-400 text-sm">Udemy · Next.js & Redux</p>
-              <p className="text-gray-500 text-sm">
-                Certificate No:{" "}
-                <span className="text-gray-300">
-                  UC-1089e6e9-5849-4573-85e5
-                </span>
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </section>
 
       {/* ================= EXPERIENCE ================= */}
       <section id="experience" className="py-24 px-4 sm:px-6 lg:px-12">
@@ -370,46 +333,6 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-      {/* ================= AWARDS ================= */}
-      <section id="awards" className="py-24 px-4 sm:px-6 lg:px-12">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto space-y-10"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center">
-            Awards & Recognition
-          </h2>
-
-          <div className="space-y-6">
-            {/* Rising Star */}
-            <div className="rounded-xl border border-white/15 p-6">
-              <h3 className="font-semibold text-lg">
-                ⭐ Rising Star Award (2023)
-              </h3>
-              <p className="text-gray-400 mt-1">
-                Terralogic · 15th Anniversary
-              </p>
-              <p className="text-gray-300 mt-2">
-                Received for outstanding performance and early impact.
-              </p>
-            </div>
-
-            {/* Above & Beyond */}
-            <div className="rounded-xl border border-white/15 p-6">
-              <h3 className="font-semibold text-lg">
-                🚀 Above & Beyond Award (2024)
-              </h3>
-              <p className="text-gray-400 mt-1">Terralogic</p>
-              <p className="text-gray-300 mt-2">
-                Recognized for creativity, energy, and strong team spirit.
-              </p>
             </div>
           </div>
         </motion.div>
@@ -611,89 +534,88 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-      <section id="contact" className="px-4 sm:px-6 lg:px-12">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="max-w-xl mx-auto text-center space-y-10"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold">Let’s Connect</h2>
 
-          <p className="text-gray-400 max-w-md mx-auto">
-            Feel free to reach out for opportunities, collaborations, or just a
-            friendly hello.
-          </p>
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="max-w-xl mx-auto text-center space-y-10"
+      >
+        <h2 className="text-3xl sm:text-4xl font-bold">Let’s Connect</h2>
 
-          {/* Contact Cards */}
-          <div className="flex justify-center gap-6 flex-wrap">
-            {/* Email */}
-            <a
-              href="mailto:adnan.mech.rymec@gmail.com"
-              className="group w-28 h-28 rounded-xl border border-white/15 
+        <p className="text-gray-400 max-w-md mx-auto">
+          Feel free to reach out for opportunities, collaborations, or just a
+          friendly hello.
+        </p>
+
+        {/* Contact Cards */}
+        <div className="flex justify-center gap-6 flex-wrap">
+          {/* Email */}
+          <a
+            href="mailto:adnan.mech.rymec@gmail.com"
+            className="group w-28 h-28 rounded-xl border border-white/15 
                  flex flex-col items-center justify-center gap-3
                  hover:border-white/40 hover:bg-white/5 transition"
-            >
-              <Image
-                src={gmail}
-                alt="Email"
-                width={32}
-                height={32}
-                className="opacity-80 group-hover:opacity-100 transition"
-              />
-              <span className="text-sm text-gray-300 group-hover:text-white">
-                Email
-              </span>
-            </a>
+          >
+            <Image
+              src={gmail}
+              alt="Email"
+              width={32}
+              height={32}
+              className="opacity-80 group-hover:opacity-100 transition"
+            />
+            <span className="text-sm text-gray-300 group-hover:text-white">
+              Email
+            </span>
+          </a>
 
-            {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/in/md-adnan-pasha217"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group w-28 h-28 rounded-xl border border-white/15 
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/md-adnan-pasha217"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group w-28 h-28 rounded-xl border border-white/15 
                  flex flex-col items-center justify-center gap-3
                  hover:border-white/40 hover:bg-white/5 transition"
-            >
-              <Image
-                src={linkedin}
-                alt="LinkedIn"
-                width={32}
-                height={32}
-                className="opacity-80 group-hover:opacity-100 transition"
-              />
-              <span className="text-sm text-gray-300 group-hover:text-white">
-                LinkedIn
-              </span>
-            </a>
+          >
+            <Image
+              src={linkedin}
+              alt="LinkedIn"
+              width={32}
+              height={32}
+              className="opacity-80 group-hover:opacity-100 transition"
+            />
+            <span className="text-sm text-gray-300 group-hover:text-white">
+              LinkedIn
+            </span>
+          </a>
 
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/journeywithpasha.tech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group w-28 h-28 rounded-xl border border-white/15 
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/journeywithpasha.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group w-28 h-28 rounded-xl border border-white/15 
                  flex flex-col items-center justify-center gap-3
                  hover:border-white/40 hover:bg-white/5 transition"
-            >
-              <Image
-                src={insta}
-                alt="Instagram"
-                width={32}
-                height={32}
-                className="opacity-80 group-hover:opacity-100 transition"
-              />
-              <span className="text-sm text-gray-300 group-hover:text-white">
-                Instagram
-              </span>
-            </a>
-          </div>
+          >
+            <Image
+              src={insta}
+              alt="Instagram"
+              width={32}
+              height={32}
+              className="opacity-80 group-hover:opacity-100 transition"
+            />
+            <span className="text-sm text-gray-300 group-hover:text-white">
+              Instagram
+            </span>
+          </a>
+        </div>
 
-          {/* Email text */}
-          <p className="text-gray-500 text-sm">adnan.mech.rymec@gmail.com</p>
-        </motion.div>
-      </section>
+        {/* Email text */}
+        <p className="text-gray-500 text-sm">adnan.mech.rymec@gmail.com</p>
+      </motion.div>
     </main>
   );
 }
