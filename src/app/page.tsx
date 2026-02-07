@@ -83,21 +83,39 @@ export default function Home() {
             • Freelancer
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-row gap-3 justify-center w-full">
             <a
               href="https://www.linkedin.com/in/md-adnan-pasha217"
               target="_blank"
-              className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+              className="
+      flex-1 max-w-[160px]
+      px-5 py-3
+      border border-white
+      rounded-lg
+      text-center
+      hover:bg-white hover:text-black
+      transition
+    "
             >
               LinkedIn
             </a>
+
             <a
               href="mailto:adnan.mech.rymec@gmail.com"
-              className="px-6 py-3 bg-white text-black rounded-lg hover:opacity-80 transition"
+              className="
+      flex-1 max-w-[160px]
+      px-5 py-3
+      bg-white text-black
+      rounded-lg
+      text-center
+      hover:opacity-80
+      transition
+    "
             >
               Contact
             </a>
           </div>
+
           {/* Tech Stack Carousel */}
           <div>
             <TechCarousel />
