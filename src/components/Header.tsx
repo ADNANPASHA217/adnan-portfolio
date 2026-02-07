@@ -17,7 +17,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 flex items-center justify-between">
         {/* Logo / Name */}
         <div className="font-semibold text-white tracking-tight">
-          Adnan<span className="text-gray-400">.</span>
+          ADNAN<span className="text-gray-400">.</span>
         </div>
 
         {/* Navigation */}
