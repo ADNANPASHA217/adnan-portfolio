@@ -12,6 +12,10 @@ import gmail from "../../public/logos/gmail.svg";
 import udemyCert from "../../public/certificates/udemy-react.jpeg";
 import kodnestCert from "../../public/certificates/kodenest-certifiacate.jpeg";
 import { useState } from "react";
+import rising1 from "../../public/certificates/terralogic2023.jpeg";
+import rising2 from "../../public/certificates/terralogic2023award.jpeg";
+import aboveBeyond from "../../public/certificates/terralogic2024.jpeg";
+import mechRank from "../../public/certificates/rymec-acadamic-ext.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -20,6 +24,8 @@ const fadeUp = {
 
 export default function Home() {
   const [preview, setPreview] = useState<string | null>(null);
+  const [previewImages, setPreviewImages] = useState<string[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <main className="relative min-h-screen text-white overflow-x-hidden">
@@ -244,13 +250,16 @@ export default function Home() {
                 <Image
                   src={kodnestCert}
                   alt="Kodnest Certificate"
-                  width={180}
-                  height={90}
+                  width={80}
+                  height={40}
                   className="
-              w-[140px] sm:w-[180px] h-auto
-              rounded-md border border-white/20
-              hover:scale-105 transition-transform
-            "
+                  rounded-xl
+                  border border-white/20
+                  shadow-lg
+                  hover:scale-105
+                  transition
+                  bg-black
+                "
                 />
               </button>
 
@@ -269,8 +278,8 @@ export default function Home() {
                 <Image
                   src={udemyCert}
                   alt="Udemy Certificate"
-                  width={180}
-                  height={90}
+                  width={80}
+                  height={40}
                   className="
               w-[140px] sm:w-[180px] h-auto
               rounded-md border border-white/20
@@ -424,29 +433,135 @@ export default function Home() {
             Awards & Recognition
           </h2>
 
-          <div className="space-y-6">
-            {/* Rising Star */}
-            <div className="rounded-xl border border-white/15 p-6">
-              <h3 className="font-semibold text-lg">
-                ⭐ Rising Star Award (2023)
-              </h3>
-              <p className="text-gray-400 mt-1">
-                Terralogic · 15th Anniversary
-              </p>
-              <p className="text-gray-300 mt-2">
-                Received for outstanding performance and early impact.
-              </p>
+          <div className="space-y-8">
+            {/* ================= RISING STAR ================= */}
+            <div
+              className="
+          rounded-xl border border-white/15 p-6
+          flex flex-col-reverse gap-6
+          md:flex-row md:items-start md:justify-between
+        "
+            >
+              {/* LEFT – TEXT */}
+              <div className="space-y-2 md:max-w-[60%]">
+                <h3 className="font-semibold text-lg">
+                  ⭐ Rising Star Award (2023)
+                </h3>
+                <p className="text-gray-400">Terralogic · 15th Anniversary</p>
+                <p className="text-gray-300">
+                  Received for outstanding performance and early impact.
+                </p>
+              </div>
+
+              {/* RIGHT – IMAGES */}
+              <div className="flex gap-4 flex-wrap md:justify-end">
+                {[rising1, rising2].map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setPreviewImages([rising1.src, rising2.src]);
+                      setActiveIndex(i);
+                    }}
+                  >
+                    <Image
+                      src={img}
+                      alt="Rising Star Award"
+                      width={80}
+                      height={40}
+                      className="
+          rounded-xl
+          border border-white/20
+          shadow-lg
+          hover:scale-105
+          transition
+          bg-black
+        "
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {/* Above & Beyond */}
-            <div className="rounded-xl border border-white/15 p-6">
-              <h3 className="font-semibold text-lg">
-                🚀 Above & Beyond Award (2024)
-              </h3>
-              <p className="text-gray-400 mt-1">Terralogic</p>
-              <p className="text-gray-300 mt-2">
-                Recognized for creativity, energy, and strong team spirit.
-              </p>
+            {/* ================= ABOVE & BEYOND ================= */}
+            <div
+              className="
+          rounded-xl border border-white/15 p-6
+          flex flex-col-reverse gap-6
+          md:flex-row md:items-start md:justify-between
+        "
+            >
+              {/* LEFT – TEXT */}
+              <div className="space-y-2 md:max-w-[60%]">
+                <h3 className="font-semibold text-lg">
+                  🚀 Above & Beyond Award (2024)
+                </h3>
+                <p className="text-gray-400">Terralogic</p>
+                <p className="text-gray-300">
+                  Recognized for creativity, energy, and strong team spirit.
+                </p>
+              </div>
+
+              {/* RIGHT – IMAGE */}
+              <div className="md:shrink-0">
+                <button
+                  onClick={() => {
+                    setPreviewImages([aboveBeyond.src]);
+                    setActiveIndex(0);
+                  }}
+                >
+                  <Image
+                    src={aboveBeyond}
+                    alt="Above & Beyond Award"
+                    width={80}
+                    height={40}
+                    className="
+                rounded-md border border-white/20
+                hover:scale-105 transition
+              "
+                  />
+                </button>
+              </div>
+            </div>
+
+            {/* ================= MECHANICAL RANK ================= */}
+            <div
+              className="
+          rounded-xl border border-white/15 p-6
+          flex flex-col-reverse gap-6
+          md:flex-row md:items-start md:justify-between
+        "
+            >
+              {/* LEFT – TEXT */}
+              <div className="space-y-2 md:max-w-[60%]">
+                <h3 className="font-semibold text-lg">
+                  🎓 2nd Rank – Mechanical Engineering
+                </h3>
+                <p className="text-gray-300">
+                  Successfully secured 2nd rank in Mechanical Engineering
+                  department.
+                </p>
+              </div>
+
+              {/* RIGHT – IMAGE */}
+              <div className="md:shrink-0">
+                <button
+                  onClick={() => {
+                    setPreviewImages([mechRank.src]);
+                    setActiveIndex(0);
+                  }}
+                >
+                  <Image
+                    src={mechRank}
+                    alt="Mechanical Rank Certificate"
+                    width={80}
+                    height={40}
+                    className="
+                rounded-md border border-white/20
+                hover:scale-105 transition
+              "
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -769,6 +884,73 @@ export default function Home() {
               height={400}
               className="w-full h-auto rounded-xl"
             />
+          </div>
+        </div>
+      )}
+      {previewImages.length > 0 && (
+        <div
+          className="
+      fixed inset-0 z-[999]
+      bg-black/80 backdrop-blur-sm
+      flex items-center justify-center px-4
+    "
+          onClick={() => setPreviewImages([])}
+        >
+          <div className="relative " onClick={(e) => e.stopPropagation()}>
+            <div
+              style={{ display: "flex", width: "100%", marginBottom: "12px" }}
+            >
+              <button
+                onClick={() => setPreviewImages([])}
+                style={{
+                  marginLeft: "auto",
+                  background: "#FFF",
+                  fontSize: "16px",
+                  color: "#000",
+                  borderRadius: "50%",
+                  width: "25px",
+                  height: "25px",
+                  cursor: "pointer",
+                }}
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Image */}
+            <Image
+              src={previewImages[activeIndex]}
+              alt="Award Preview"
+              width={700}
+              height={400}
+              className="w-full h-auto rounded-xl"
+            />
+
+            {/* Navigation */}
+            {previewImages.length > 1 && (
+              <>
+                <button
+                  onClick={() =>
+                    setActiveIndex(
+                      (activeIndex - 1 + previewImages.length) %
+                        previewImages.length
+                    )
+                  }
+                  className="absolute left-0 top-1/2 -translate-y-1/2 text-white text-3xl px-4"
+                >
+                  ‹
+                </button>
+
+                <button
+                  onClick={() =>
+                    setActiveIndex((activeIndex + 1) % previewImages.length)
+                  }
+                  className="absolute right-0 top-1/2 -translate-y-1/2 text-white text-3xl px-4"
+                >
+                  ›
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}
