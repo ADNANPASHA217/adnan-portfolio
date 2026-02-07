@@ -109,30 +109,102 @@ export default function Home() {
       </section>
 
       {/* ================= SKILLS ================= */}
-      <section id="skills" className="py-24 px-4 sm:px-6 lg:px-12 ">
+      <section id="skills" className="py-24 px-4 sm:px-6 lg:px-12">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto space-y-10 text-center"
+          className="max-w-6xl mx-auto space-y-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold">Skills</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center">Skills</h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left auto-rows-fr">
             {[
-              "React.js / Next.js / React Native",
-              "TypeScript / JavaScript",
-              "Material UI / Tailwind CSS / Bootstrap",
-              "Redux / Context API",
-              "REST APIs / Axios / Fetch",
-              "Git / GitHub / GitLab",
-            ].map((skill) => (
+              {
+                title: "Frontend Development",
+                items: [
+                  "React.js, Next.js, React Native",
+                  "Component-based architecture",
+                  "Reusable & scalable UI components",
+                ],
+              },
+              {
+                title: "Languages & State",
+                items: [
+                  "JavaScript, TypeScript",
+                  "Redux, Context API",
+                  "Async data handling & state management",
+                ],
+              },
+              {
+                title: "UI & Styling",
+                items: [
+                  "Material UI (MUI)",
+                  "Tailwind CSS, Bootstrap",
+                  "SCSS, Responsive & mobile-first design",
+                  "UI/UX implementation from Figma",
+                ],
+              },
+              {
+                title: "API & Integration",
+                items: [
+                  "RESTful API integration",
+                  "Axios, Fetch",
+                  "Loading & error handling",
+                ],
+              },
+              {
+                title: "Performance & Quality",
+                items: [
+                  "Performance optimization",
+                  "Clean, maintainable code",
+                  "Debugging & issue resolution",
+                ],
+              },
+              {
+                title: "Tools & Practices",
+                items: [
+                  "Git, GitHub, GitLab",
+                  "NPM, Yarn",
+                  "Agile / Scrum",
+                  "Code reviews & documentation",
+                ],
+              },
+            ].map((card, i) => (
               <div
-                key={skill}
-                className="border border-white/10 rounded-lg p-5 text-gray-300"
+                key={i}
+                className="relative rounded-xl p-[2px] overflow-hidden group h-full flex"
               >
-                {skill}
+                {/* ROTATING BORDER */}
+                <div
+                  className="absolute inset-0 rounded-xl"
+                  style={{
+                    background:
+                      "conic-gradient( from 0deg, transparent 60%, rgba(255,255,255,0.15), rgba(255,255,255,0.6), rgba(255,255,255,0.15), transparent)",
+                    animation:
+                      "rotateBorder 6s cubic-bezier(0.4, 0.0, 0.2, 1) infinite",
+                  }}
+                />
+
+                {/* INNER CARD */}
+                <div
+                  className="
+        relative z-10 rounded-xl bg-black p-6 space-y-3
+        border border-white/10
+        h-full w-full
+        flex flex-col
+        group-hover:shadow-[0_0_40px_rgba(255,255,255,0.35)]
+        transition-all duration-300
+      "
+                >
+                  <h3 className="font-semibold text-lg">{card.title}</h3>
+                  <ul className="text-gray-300 space-y-1">
+                    {card.items.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
