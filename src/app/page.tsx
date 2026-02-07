@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import adnanProfile from "../../public/profile.jpeg";
 import TechCarousel from "@/components/TechCarousel";
+import LiquidEther from "@/components/LiquidEther";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -13,20 +14,35 @@ const fadeUp = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white overflow-x-hidden">
+    <main className="relative min-h-screen text-white overflow-x-hidden">
       <Header />
 
       {/* ================= HERO ================= */}
-      <section
-        id="home"
-        className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 pt-16"
-      >
+      <section id="home" className="min-h-screen relative">
+        <LiquidEther
+          colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
+          mouseForce={12}
+          cursorSize={90}
+          isViscous
+          viscous={18}
+          iterationsViscous={18}
+          iterationsPoisson={20}
+          resolution={0.35}
+          autoDemo
+          autoSpeed={0.4}
+          autoIntensity={1.6}
+          takeoverDuration={0.25}
+        />
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center w-full max-w-4xl space-y-8"
+          className="text-center w-full max-w-4xl space-y-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+          px-4 
+          sm:px-6
+           pt-16 
+          "
         >
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
@@ -79,19 +95,21 @@ export default function Home() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold">About Me</h2>
           <p className="text-gray-400">
-            Frontend developer with 3+ years of experience building scalable,
-            high-performance web applications using React, Next.js, and modern
-            UI frameworks.
+            Frontend Developer with 3+ years of hands-on experience in React,
+            Next.js, and React Native, building scalable, maintainable, and
+            performance-driven applications.
           </p>
+
           <p className="text-gray-400">
-            Passionate about clean code, smooth animations, and intuitive user
-            experiences.
+            I specialize in creating clean UI, reusable component systems, and
+            SEO-optimized interfaces. I focus on delivering fast, accessible,
+            and user-centric digital experiences.
           </p>
         </motion.div>
       </section>
 
       {/* ================= SKILLS ================= */}
-      <section id="skills" className="py-24 px-4 sm:px-6 lg:px-12 bg-black">
+      <section id="skills" className="py-24 px-4 sm:px-6 lg:px-12 ">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -159,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* ================= PROJECTS ================= */}
-      <section id="projects" className="py-24 px-4 sm:px-6 lg:px-12 bg-black">
+      <section id="projects" className="py-24 px-4 sm:px-6 lg:px-12 ">
         <motion.div
           variants={fadeUp}
           initial="hidden"
