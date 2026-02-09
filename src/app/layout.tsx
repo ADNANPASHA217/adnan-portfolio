@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Mohammed Adnan Pasha | Portfolio",
@@ -17,6 +18,7 @@ export default function RootLayout({
         className="bg-black text-white antialiased"
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
