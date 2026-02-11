@@ -923,7 +923,11 @@ export default function Home() {
           </div>
 
           {/* Email text */}
-          <p className="text-gray-500 text-sm">adnan.mech.rymec@gmail.com</p>
+          {/* <p className="text-gray-500 text-sm">adnan.mech.rymec@gmail.com</p> */}
+          <p className="text-gray-600 text-xs mt-4">
+            © {new Date().getFullYear()} Mohammed Adnan Pasha. All rights
+            reserved. | Software Engineer
+          </p>
         </motion.div>
       </section>
 
