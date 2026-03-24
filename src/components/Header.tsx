@@ -175,10 +175,10 @@ export default function Header() {
                 <motion.div
                   whileHover={{ scale: 1.04, y: -1 }}
                   transition={{ type: "spring", stiffness: 340, damping: 20 }}
-                  className="relative overflow-hidden rounded-md bg-white px-3 py-1 font-semibold text-black shadow-[0_8px_30px_rgba(255,255,255,0.12)]"
+                  className="relative overflow-hidden rounded-md px-3 py-1 font-semibold text-white"
                 >
                   <motion.span
-                    className="absolute inset-y-0 -left-1/2 w-1/2 skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/75 to-transparent"
+                    className="absolute inset-y-0 -left-1/2 w-1/2 skew-x-[-20deg]"
                     animate={{ x: ["-120%", "290%"] }}
                     transition={{
                       duration: 2.8,
@@ -187,8 +187,11 @@ export default function Header() {
                       repeatDelay: 1.6,
                     }}
                   />
-                  <span className="relative z-10">
-                    ADNAN<span className="font-bold">.</span>
+                  <span
+                    className="relative z-10"
+                    style={{ fontFamily: "fantasy" }}
+                  >
+                    ADNAN
                   </span>
                 </motion.div>
               </motion.div>
@@ -264,7 +267,11 @@ export default function Header() {
               <motion.span
                 className="absolute inset-0 rounded-full bg-white/10"
                 animate={{ opacity: [0.16, 0.3, 0.16], scale: [1, 1.06, 1] }}
-                transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 2.6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
               <motion.span
                 animate={{ rotate: open ? 90 : 0 }}
@@ -300,12 +307,20 @@ export default function Header() {
                 <motion.span
                   className="absolute -left-8 top-16 h-32 w-32 rounded-full bg-cyan-400/20 blur-3xl"
                   animate={{ x: [0, 28, 0], opacity: [0.18, 0.35, 0.18] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 />
                 <motion.span
                   className="absolute right-0 top-40 h-32 w-36 rounded-full bg-fuchsia-500/15 blur-3xl"
                   animate={{ x: [0, -24, 0], opacity: [0.14, 0.28, 0.14] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 />
               </div>
 
@@ -316,7 +331,10 @@ export default function Header() {
                 exit="exit"
                 className="relative space-y-6"
               >
-                <motion.div variants={drawerItemVariants} className="text-xl font-bold">
+                <motion.div
+                  variants={drawerItemVariants}
+                  className="text-xl font-bold"
+                >
                   ADNAN<span className="text-gray-400">.</span>
                 </motion.div>
 
