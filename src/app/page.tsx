@@ -801,6 +801,29 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
+            {/* TATA Tetley UK */}
+            <div className="rounded-xl border border-white/15 p-6 space-y-4">
+              <h3 className="text-lg font-semibold">TATA Tetley UK</h3>
+              <p className="text-gray-400 text-sm">
+                Developed a responsive web platform using Next.js with reusable
+                components and modern UI patterns.
+              </p>
+              <p className="text-gray-500 text-sm">
+                <span className="font-medium text-gray-300">Domain:</span>{" "}
+                Brand Website
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Next.js", "React", "SEO", "SSR"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-3 py-1 rounded-full border border-white/20 text-gray-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </section>
